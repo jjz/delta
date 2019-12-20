@@ -24,7 +24,6 @@ func main() {
 }
 
 func bstest() {
-
 	S0 := 50.0
 
 	// K := 640.0
