@@ -7,21 +7,21 @@ import (
 var config Config
 
 func main() {
-	//config := InitConfig()
-	//switch config.action {
-	//case "optionScan":
-	//	// equityQuotes := LoadOHLCFiles(config)
-	//	//log.Println(len(equityQuotes))
-	//	//ProcessOptionsFile(config, equityQuotes)
-	//	log.Println("Not implemented yet")
-	//case "ohlcLoad":
-	//	namesCache := LoadNamesFiles(config)
-	//
-	//	LoadAllOHLCFiles(config, namesCache)
-	//}
+	config := InitConfig()
+	switch config.action {
+	case "optionScan":
+		// equityQuotes := LoadOHLCFiles(config)
+		//log.Println(len(equityQuotes))
+		//ProcessOptionsFile(config, equityQuotes)
+		log.Println("Not implemented yet")
+	case "ohlcLoad":
+		namesCache := LoadNamesFiles(config)
 
-	bstest()
-	bstput()
+		LoadAllOHLCFiles(config, namesCache)
+	}
+
+	//bstest()
+	//bstput()
 }
 
 func bstest() {
