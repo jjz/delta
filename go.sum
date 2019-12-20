@@ -1,0 +1,4 @@
+github.com/chobie/go-gaussian v0.0.0-20150107165016-53c09d90eeaf h1:joIg05jbCevMTHYELK+iU5xNS6FoOEhp9IpFQ5e2B+8=
+github.com/chobie/go-gaussian v0.0.0-20150107165016-53c09d90eeaf/go.mod h1:cTHhhPCN9aDCOgkFM4Pty90DILaV/TrfCRhMtOFCUUI=
+github.com/lib/pq v1.3.0 h1:/qkRGz8zljWiDcFvgpwUpwIAPu3r07TDvs3Rws+o/pU=
+github.com/lib/pq v1.3.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
