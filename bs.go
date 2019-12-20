@@ -5,6 +5,7 @@ package main
 */
 
 import (
+	"fmt"
 	"github.com/chobie/go-gaussian"
 	"math"
 	"time"
@@ -35,7 +36,7 @@ func NewOption(right string, S0 float64, K float64, eval_date string, exp_date s
 		r:         r,
 		eval_date: eval_date,
 		exp_date:  exp_date,
-		T:         calculateT(eval_date, exp_date),
+		T:         1,
 		right:     right,
 		sigma:     sigma,
 		price:     price,
@@ -63,7 +64,7 @@ const PI float64 = 3.14159265359
 
 // calculate Black Scholes price and greeks
 func (self *Option) Initialize() {
-	norm := gaussian.NewGaussian(0, 1)
+	norm := gaussian.NewGaussian(0.0, 1.0)
 
 	if self.sigma < 0 {
 		self.sigma = self.impliedVol()
@@ -75,7 +76,11 @@ func (self *Option) Initialize() {
 	// we know volatility and want a price, or we're guessing at volatility and we want a price.
 	if self.price < 0 {
 		if self.right == "C" {
-			self.price = self.S0*norm.Cdf(td1) - self.K*math.Exp(-self.r*self.T)*norm.Cdf(td2)
+			fmt.Println(td1)
+			fmt.Println(td2)
+			fmt.Println((self.S0 * math.Exp(-0 * 1)) *norm.Cdf(td1))
+			fmt.Println(self.K*math.Exp(-self.r*self.T)*norm.Cdf(td2))
+			self.price =(self.S0 * math.Exp(-0 * 1)) *norm.Cdf(td1) - self.K*math.Exp(-self.r*self.T)*norm.Cdf(td2)
 		} else if self.right == "P" {
 			self.price = self.K*math.Exp(-self.r*self.T)*norm.Cdf(-td2) - self.S0*norm.Cdf(-td1)
 		}
